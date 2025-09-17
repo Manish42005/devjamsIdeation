@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono-Brawl | Hackathon Ideation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .slide {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+        }
+        .ability-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .ability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="orbitron text-2xl font-bold gradient-text">Chrono-Brawl</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#title" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Home</a>
+                        <a href="#problem" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Problem</a>
+                        <a href="#solution" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Solution</a>
+                        <a href="#gameplay" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Gameplay</a>
+                        <a href="#features" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Features</a>
+                        <a href="#tech" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Tech</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="menu-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-gray-900/90 backdrop-blur-md flex items-center justify-center">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+            <a href="#title" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Home</a>
+            <a href="#problem" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Problem</a>
+            <a href="#solution" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Solution</a>
+            <a href="#gameplay" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Gameplay</a>
+            <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Features</a>
+            <a href="#tech" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Tech</a>
+            <button id="close-menu" class="mt-8 px-4 py-2 rounded-md border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition">Close</button>
+        </div>
+    </div>
+
+    <!-- Title Slide -->
+    <section id="title" class="slide flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900/30">
+        <div class="max-w-4xl mx-auto text-center px-4" data-aos="fade-up">
+            <h1 class="orbitron text-5xl md:text-7xl font-bold mb-4 gradient-text">Chrono-Brawl</h1>
+            <p class="text-2xl md:text-3xl font-light mb-8">Outplay in the Fourth Dimension</p>
+            <div class="bg-gray-800/50 rounded-xl p-6 max-w-2xl mx-auto">
+                <h2 class="orbitron text-xl md:text-2xl mb-4">BrainDevs Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                            <i data-feather="user" class="text-white"></i>
+                        </div>
+                        <span>Manish Kumar Mahto – 24BEL0002</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center">
+                            <i data-feather="user" class="text-white"></i>
+                        </div>
+                        <span>Ayush Satyam – 24BEI0064</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
+                            <i data-feather="user" class="text-white"></i>
+                        </div>
+                        <span>Keshav Kohli – 24BIT0619</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center">
+                            <i data-feather="user" class="text-white"></i>
+                        </div>
+                        <span>Deep Arjit Prasad – 24BCE2406</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#problem" class="mt-12 inline-block animate-bounce">
+                <i data-feather="chevron-down" class="w-10 h-10 text-blue-400"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Elevator Pitch -->
+    <section id="pitch" class="slide bg-gradient-to-br from-blue-900/30 to-purple-900/30">
+        <div class="max-w-4xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">The Elevator Pitch</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="orbitron text-xl md:text-2xl font-semibold mb-2">Concept</h3>
+                        <p class="text-gray-300">Chrono-Brawl is a fast-paced, competitive 1v1 online arena shooter where victory depends not just on aim, but on the strategic manipulation of time itself.</p>
+                    </div>
+                    <div>
+                        <h3 class="orbitron text-xl md:text-2xl font-semibold mb-2">Vision</h3>
+                        <p class="text-gray-300">To create a high-skill-ceiling PvP experience that rewards clever thinking and tactical foresight as much as pure mechanical skill.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Slide -->
+    <section id="problem" class="slide bg-gradient-to-br from-purple-900/30 to-indigo-900/30">
+        <div class="max-w-4xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">The Problem: A Stale Battlefield</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-300">The competitive shooter market is saturated with titles that, while excellent, primarily test a player's reaction time and muscle memory.</p>
+                    <p class="text-gray-300">This singular focus on twitch mechanics can lead to repetitive gameplay loops and create a high barrier for players who excel in strategy but may not have lightning-fast reflexes.</p>
+                </div>
+                <div class="mt-8">
+                    <img src="http://static.photos/gaming/1024x576/1" alt="Competitive Shooter" class="rounded-lg w-full h-auto shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Slide -->
+    <section id="solution" class="slide bg-gradient-to-br from-indigo-900/30 to-pink-900/30">
+        <div class="max-w-4xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">Our Solution: A New Axis of Skill</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-300">Chrono-Brawl introduces a deep strategic layer to the familiar shooter formula by giving players direct control over time-based mechanics.</p>
+                    <p class="text-gray-300">Our solution is a game where out-thinking your opponent is as important as out-shooting them. Abilities like freezing an enemy in time or rewinding their position create a dynamic combat puzzle that is different every single round.</p>
+                </div>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="clock" class="text-blue-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Time Manipulation</h3>
+                        </div>
+                        <p class="text-gray-300">Control the flow of time to gain tactical advantages over your opponent.</p>
+                    </div>
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="cpu" class="text-purple-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Strategic Depth</h3>
+                        </div>
+                        <p class="text-gray-300">Combine time abilities with traditional shooting mechanics for endless tactical possibilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Loop -->
+    <section id="gameplay" class="slide bg-gradient-to-br from-pink-900/30 to-blue-900/30">
+        <div class="max-w-4xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">Core Gameplay Loop</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="orbitron text-xl font-semibold mb-1">Spawn</h3>
+                            <p class="text-gray-300">Players spawn in a symmetrical arena.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-500 flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="orbitron text-xl font-semibold mb-1">Engage</h3>
+                            <p class="text-gray-300">Players hunt each other using a combination of standard damage-dealing weapons and time-bending abilities.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-500 flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="orbitron text-xl font-semibold mb-1">Control & Damage</h3>
+                            <p class="text-gray-300">Use the Stasis Beam to freeze an enemy, setting them up for a shot with the damaging Plasma Blaster.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-pink-500 flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="orbitron text-xl font-semibold mb-1">Survive</h3>
+                            <p class="text-gray-300">Use the Haste Field to dodge attacks or aggressively reposition.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-500 flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="orbitron text-xl font-semibold mb-1">Victory</h3>
+                            <p class="text-gray-300">Deplete the opponent's health to zero to win the round. The first to win a set number of rounds wins the match.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <img src="http://static.photos/technology/1024x576/2" alt="Gameplay Concept" class="rounded-lg w-full h-auto shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="slide bg-gradient-to-br from-blue-900/30 to-purple-900/30">
+        <div class="max-w-6xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">Key Features & Abilities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="zap" class="text-blue-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Real-Time Networked PvP</h3>
+                        </div>
+                        <p class="text-gray-300">A seamless, player-hosted 1v1 experience built on a server-authoritative architecture to ensure fair play.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="wind" class="text-purple-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Stasis Beam</h3>
+                        </div>
+                        <p class="text-gray-300">A tactical beam that temporarily freezes an opponent, locking them in place and making them a vulnerable target.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="target" class="text-red-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Plasma Blaster</h3>
+                        </div>
+                        <p class="text-gray-300">A reliable energy weapon that serves as the primary tool for reducing the opponent's health.</p>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="rewind" class="text-yellow-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Rewind Grenade</h3>
+                        </div>
+                        <p class="text-gray-300">A thrown explosive that forces any opponent caught in its blast radius to revert to their position from a few seconds prior.</p>
+                    </div>
+                    
+                    <!-- Feature 5 -->
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="fast-forward" class="text-green-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Haste Field</h3>
+                        </div>
+                        <p class="text-gray-300">A personal speed boost that allows for rapid repositioning, dodging critical shots, or closing the distance for an aggressive play.</p>
+                    </div>
+                    
+                    <!-- Feature 6 -->
+                    <div class="ability-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mr-4">
+                                <i data-feather="award" class="text-indigo-400"></i>
+                            </div>
+                            <h3 class="orbitron text-xl">Competitive Ranking</h3>
+                        </div>
+                        <p class="text-gray-300">A skill-based ranking system that matches players of similar ability for balanced, exciting matches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="slide bg-gradient-to-br from-purple-900/30 to-indigo-900/30">
+        <div class="max-w-4xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">Tech Stack</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="orbitron text-xl font-semibold mb-4">Core Technologies</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="box" class="text-blue-400 mr-3 mt-1"></i>
+                                <span class="flex-1"><strong>Game Engine:</strong> Unity</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="code" class="text-purple-400 mr-3 mt-1"></i>
+                                <span class="flex-1"><strong>Programming Language:</strong> C#</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="globe" class="text-indigo-400 mr-3 mt-1"></i>
+                                <span class="flex-1"><strong>Networking:</strong> Unity's Netcode for GameObjects (NGO) package</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="orbitron text-xl font-semibold mb-4">Network Architecture</h3>
+                        <p class="text-gray-300 mb-4">We're implementing a server-authoritative model where the Host player acts as the server to prevent cheating and ensure game state consistency.</p>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-mono text-blue-400">Host Player</span>
+                                <i data-feather="server" class="text-green-400"></i>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-mono text-purple-400">Client Player</span>
+                                <i data-feather="user" class="text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVP & Goals -->
+    <section id="goals" class="slide bg-gradient-to-br from-indigo-900/30 to-pink-900/30">
+        <div class="max-w-4xl mx-auto px-4 py-20">
+            <div class="bg-gray-800/50 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                <h2 class="orbitron text-3xl md:text-4xl font-bold mb-6 gradient-text">Hackathon MVP & Stretch Goals</h2>
+                
+                <div class="mb-8">
+                    <h3 class="orbitron text-xl font-semibold mb-4 text-blue-400">Minimum Viable Product (Must-Haves)</h3>
+                    <ul class="space-y-2 pl-5">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-400 mr-2 mt-1"></i>
+                            <span>A 1v1 playable scene with two players able to connect as Host and Client</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-400 mr-2 mt-1"></i>
+                            <span>Functional player movement and camera controls</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-400 mr-2 mt-1"></i>
+                            <span>Working Stasis Beam and Plasma Blaster abilities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-400 mr-2 mt-1"></i>
+                            <span>A functional Health System with a win/loss condition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-400 mr-2 mt-1"></i>
+                            <span>Basic on-screen Health Bar UI</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="orbitron text-xl font-semibold mb-4 text-purple-400">Stretch Goals (Should-Haves)</h3>
+                    <ul class="space-y-2 pl-5">
+                        <li class="flex items-start">
+                            <i data-feather="circle" class="text-yellow-400 mr-2 mt-1"></i>
+                            <span>Implement the Haste Field ability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="circle" class="text-yellow-400 mr-2 mt-1"></i>
+                            <span>Add basic sound effects for shooting and abilities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="circle" class="text-yellow-400 mr-2 mt-1"></i>
+                            <span>A functional main menu for hosting and joining</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="orbitron text-xl font-semibold mb-4 text-pink-400">Ambitious Goals (Could-Haves)</h3>
+                    <ul class="space-y-2 pl-5">
+                        <li class="flex items-start">
+                            <i data-feather="circle" class="text-red-400 mr-2 mt-1"></i>
+                            <span>Implement the complex Rewind Grenade functionality</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="circle" class="text-red-400 mr-2 mt-1"></i>
+                            <span>Add more visual polish, like particle effects for impacts and abilities</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="orbitron text-2xl font-bold gradient-text">Chrono-Brawl</h2>
+                    <p class="mt-2">Outplay in the Fourth Dimension</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
